@@ -10,4 +10,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('UserTask', {
     userId: {
         type: DataTypes.UUID
     }
+}, {
+    freezeTableName: true,
+    timestamps: false
 });

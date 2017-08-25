@@ -11,4 +11,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('Permission', {
             notEmpty: true
         }
     }
+}, {
+    freezeTableName: true,
+    timestamps: false
 });

@@ -41,5 +41,7 @@ connection()
         }
     )
     .catch(
-        (err) => console.error(err.message)
+        (err) => {
+            throw new Error(err.message);
+        }
     );

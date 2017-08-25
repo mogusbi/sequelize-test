@@ -12,11 +12,15 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         }
+    }, {
+        freezeTableName: true,
+        timestamps: false
     });
 
     Task.associate = (models) => {
         Task.belongsToMany(models.Permission, {
             as: 'permissions',
+            foreignKey: 'permissionId',
             through: models.TaskPermission
         });
     };
