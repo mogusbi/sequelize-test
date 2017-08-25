@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 
 module.exports = () => {
     const db = {};
-    const sequelize = new Sequelize('postgres://great-run-company:_(8tPMvNT^=Q~5ha@localhost:5432/sequelize-test');
+    const sequelize = new Sequelize('postgres://user:password@localhost:5432/sequelize-test');
     const modelDir = join(__dirname, 'models');
 
     readdirSync(modelDir)
