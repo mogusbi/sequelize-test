@@ -37,15 +37,9 @@ module.exports = (sequelize, DataTypes) => {
     User.associate = (models) => {
         User.belongsToMany(models.Permission, {
             as: 'permissions',
-            foreignKey: 'permissionId',
+            foreignKey: 'userId',
             through: models.TaskPermission
         });
-
-        User.belongsToMany(models.Task, {
-            as: 'tasks',
-            foreignKey: 'taskId',
-            through: models.UserTask
-        })
     };
 
     return User;
