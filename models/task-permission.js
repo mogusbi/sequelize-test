@@ -5,13 +5,16 @@ module.exports = (sequelize, DataTypes) => sequelize.define('TaskPermission', {
         type: DataTypes.UUID
     },
     permissionId: {
-        type: DataTypes.UUID
+        type: DataTypes.UUID,
+        unique: 'task_permission_user_key'
     },
     taskId: {
-        type: DataTypes.UUID
+        type: DataTypes.UUID,
+        unique: 'task_permission_user_key'
     },
     userId: {
-        type: DataTypes.UUID
+        type: DataTypes.UUID,
+        unique: 'task_permission_user_key'
     }
 }, {
     freezeTableName: true,

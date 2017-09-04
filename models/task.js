@@ -20,8 +20,12 @@ module.exports = (sequelize, DataTypes) => {
     Task.associate = (models) => {
         Task.belongsToMany(models.Permission, {
             as: 'permissions',
+            constraints: false,
             foreignKey: 'taskId',
-            through: models.TaskPermission
+            through: {
+                model: models.TaskPermission,
+                unique: false
+            }
         });
     };
 
